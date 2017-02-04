@@ -1,4 +1,4 @@
-## Welcome to GitHub Pages
+## Hey Y'all
 
 You can use the [editor on GitHub](https://github.com/kraberry/enghack/edit/gh-pages/README.md) to maintain and preview the content for your website in Markdown files.
 
