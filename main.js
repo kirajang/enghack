@@ -1,16 +1,13 @@
 // declare elements
-var button = document.createElement('button');
-var time = document.createElement('p');
+var button = document.querySelector('#timer');
+var time = document.querySelector('.time');
 //declare timer variables
 var sec = 0;
 var min = 0;
 var setTime;
 
-button.textContent='start timer';
 time.style.fontSize = "xx-large";
 
-document.body.appendChild(button);
-document.body.appendChild(time);
 
 
   button.addEventListener('click', buttonFn);
@@ -62,7 +59,6 @@ document.body.appendChild(time);
 
   // buttonFn(): starts the timer
   function buttonFn(){
-    document.body.removeChild(button);
     setTime = setInterval(timer25, 1);  // <- change the 1 to 1000
   }
 
