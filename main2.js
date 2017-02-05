@@ -9,13 +9,14 @@ var userIn;
 var i = 0;
 var userLog = document.createElement('ul');
 
-instruct.textContent = "How many sessions would you like?"
+instruct.textContent = "How many sessions would you like?";
 button.textContent='start timer';
 time.style.fontSize = "xx-large";
 
 document.body.appendChild(instruct);
 document.body.appendChild(button);
 document.body.appendChild(time);
+document.body.appendChild(userLog);
 
 button.addEventListener('click', buttonFn);
 
@@ -44,6 +45,8 @@ function timer25(){
       i++;
       console.log(i);
       setTime = setInterval(timer5, 1);
+    } else {
+      addToList();
     }
   }
 }
@@ -74,6 +77,14 @@ function startTimer(){
 
 function isNumber (o) {
   return ! isNaN (o-0) && o !== null && o !== "" && o !== false;
+}
+
+function addToList(){
+  var userLog1 = document.createElement('li');
+  //userLog1.textContent = userIn;
+  var date = new Date();
+  userLog1.textContent = userIn + " session(s) on " + date;
+  userLog.appendChild(userLog1);
 }
 
 
