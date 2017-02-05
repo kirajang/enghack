@@ -2,6 +2,7 @@
 var button = document.querySelector('#timer');
 var time = document.querySelector('.time');
 var img = document.querySelector('#animal');
+
 //declare timer variables
 var sec = 0;
 var min = 0;
