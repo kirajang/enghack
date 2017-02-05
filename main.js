@@ -5,7 +5,6 @@ var time = document.createElement('p');
 var sec = 0;
 var min = 0;
 var setTime;
-var userIn = window.prompt("give input", 1);
 
 button.textContent='start timer';
 time.style.fontSize = "xx-large";
@@ -13,9 +12,7 @@ time.style.fontSize = "xx-large";
 document.body.appendChild(button);
 document.body.appendChild(time);
 
-for (i = 1; i < userIn; i++){
-  sec=0;
-  min=0;
+
   button.addEventListener('click', buttonFn);
   
   // timer25(): timer for 25 minutes
@@ -68,4 +65,4 @@ for (i = 1; i < userIn; i++){
     document.body.removeChild(button);
     setTime = setInterval(timer25, 1);  // <- change the 1 to 1000
   }
-}
+
