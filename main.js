@@ -1,10 +1,13 @@
 // declare elements
 var button = document.querySelector('#timer');
 var time = document.querySelector('.time');
+var img = document.querySelector('#animal');
 //declare timer variables
 var sec = 0;
 var min = 0;
 var setTime;
+
+var startimages
 
 time.style.fontSize = "xx-large";
 
@@ -28,23 +31,22 @@ time.style.fontSize = "xx-large";
       clearInterval(setTime);
       sec = 0;
       min = 0;
-
-      var dog = document.createElement('img');
-      dog.src = "dogtest.jpg";
-      dog.width = 500;
-      dog.height = 270;
-      document.body.appendChild(dog);
-      setTime = setInterval(timer5, 1); // <- change the 1 to 1000
-    }
+	  setTime = setInterval(timer5, 100); // <- change the 1 to 1000
+	}
   }
 
   // timer5(): timer for 5 minutes
   function timer5(){
-    sec++;
+    
+	sec++;
     if (sec >= 60){
       min++;
       sec=0;
     }
+	
+	if (sec % 30 === 0) {
+		change_image()
+	}
     if (sec<10){
       time.textContent = min+ ':0'+ sec;
     } else {
@@ -56,9 +58,16 @@ time.style.fontSize = "xx-large";
       min = 0;
     }
   }
+  
+  function change_image() {
+	  img.src = 'https://placeimg.com/640/480/animals';
+  }
+ 
+
 
   // buttonFn(): starts the timer
   function buttonFn(){
     setTime = setInterval(timer25, 1);  // <- change the 1 to 1000
+	clearInterval(startimages)
   }
 
