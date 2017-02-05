@@ -3,6 +3,7 @@ var button = document.querySelector('#timer');
 var time = document.querySelector('#timer_time');
 var img = document.querySelector('#animal');
 var userIn; 
+var userInLog;
 
 //declare timer variables
 var sec = 0;
@@ -79,7 +80,16 @@ time.style.fontSize = "xx-large";
   setTime = setInterval(timer25, 1);
 }
 
+var n = 0;
 
+function addToList(){
+  n++;
+  userInLog = document.getElementById('log').value;
+  var userLog1 = document.querySelector('#no' + n)
+  var date = new Date();
+  userLog1.textContent = userInLog + " (" + userIn + " session(s) on " + date + ")";
+  
+}
 
 
   // buttonFn(): starts the timer
@@ -88,8 +98,10 @@ time.style.fontSize = "xx-large";
 		min = 0;
 		i = 0;
 		userIn = document.getElementById('num_sessions').value;
+		addToList()
 		startTimer();
 		clearInterval(startimages);
+		
   }
   
   
