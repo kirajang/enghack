@@ -1,14 +1,16 @@
 // declare elements
 var button = document.querySelector('#timer');
-var time = document.querySelector('.time');
+var time = document.querySelector('#timer_time');
 var img = document.querySelector('#animal');
+var userIn; 
 
 //declare timer variables
 var sec = 0;
 var min = 0;
+var i;
 var setTime;
 
-var startimages
+var startimages;
 
 time.style.fontSize = "xx-large";
 
@@ -18,6 +20,7 @@ time.style.fontSize = "xx-large";
   
   // timer25(): timer for 25 minutes
   function timer25(){
+	
     sec++;
     if (sec >= 60){
       min++;
@@ -32,7 +35,12 @@ time.style.fontSize = "xx-large";
       clearInterval(setTime);
       sec = 0;
       min = 0;
-	  setTime = setInterval(timer5, 100); // <- change the 1 to 1000
+	
+	  if (i<userIn-1){
+      i++;
+      console.log(i);
+      setTime = setInterval(timer5, 1);
+	}
 	}
   }
 
@@ -45,7 +53,7 @@ time.style.fontSize = "xx-large";
       sec=0;
     }
 	
-	if (sec % 30 === 0) {
+	if (sec % 500 === 0) {
 		change_image()
 	}
     if (sec<10){
@@ -57,6 +65,8 @@ time.style.fontSize = "xx-large";
       clearInterval(setTime);
       sec = 0;
       min = 0;
+	  
+	  startTimer()
     }
   }
   
@@ -64,11 +74,23 @@ time.style.fontSize = "xx-large";
 	  img.src = 'https://placeimg.com/640/480/animals';
   }
  
+ 
+ function startTimer(){
+  setTime = setInterval(timer25, 1);
+}
+
+
 
 
   // buttonFn(): starts the timer
   function buttonFn(){
-    setTime = setInterval(timer25, 1);  // <- change the 1 to 1000
-	clearInterval(startimages)
+		sec = 0;
+		min = 0;
+		i = 0;
+		userIn = document.getElementById('num_sessions').value;
+		startTimer();
+		clearInterval(startimages);
   }
+  
+  
 

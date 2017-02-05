@@ -51,27 +51,58 @@
       </div>
     </nav>
 
-    <div class="container">
 
       <div class="starter-template">
-        <h1>Bootstrap starter template</h1>
-        <p class="lead">Use this document as a way to quickly start any new project.<br> All you get is this text and a mostly barebones HTML document.</p>
-      </div>
+        <h1>Welcome to our Pomodoro timer</h1>
+        <p class="lead">Use this timer to track your productivity.</p>
+		
+		<div class="container">
+		<p class="text-center">The Pomodoro technique is a time management technique.  The core idea is to focus on work for 25 minutes at a time, and take a 5 minute break in between.  For each 25 minute session you record what you did, like a log.  The 25 minute bursts help you stay focused, and over time the log sheet becomes a powerful tool for scheduling your time accurately.  </p>
+		</div>
+		
+	  </div>
 	  
 	  <div class="container">
-    <!--Row with three equal columns-->
-    <div class="row">
-        <div class="col-md-4"><!--Column left--></div>
-			<p>Welcome to our pomodoro timer</p>
-        <div class="col-md-4">
-			<p class='time'></p>
-			<button id="timer" type="button" class="btn btn-info">Timer</button>
-		<!--Column middle--></div>
-        <div class="col-md-4">
+		<p id="timer_time" class='text-center'></p>
+	  </div>
+	  
+	  
+	<div class="container">
+	<div class="row">
+    
+		<div class="col-sm-4 col-md-4">	
+		<h2 class="text-left"><small>Step 1: Enter number of sessions, and log your activity.</small></h2>
+			<form>
+				<div class="input-group">
+					<label for="inputsessions#">How many sessions would you like?</label>
+					
+					<input id="num_sessions" type="number" class="form-control" placeholder="Number of timer sessions">
+				</div>
+				
+				<div class="input-group">
+					<label for="log">Enter your work and activities here:</label>
+					<textarea class="form-control" rows="3"></textarea>
+				</div>
+				</div>
+			</form>
+			
+		<div class="col-sm-3 col-md-3 col-md-offset-1">	
+			<h2 class="text-centre"><small>Step 2: Get to work!<br></small></h2>
+			<button id="timer" type="button" class="btn btn-primary btn-lg">Start Timer</button>
+		</div>
+		
+
+		<div class="col-sm-4 col-md-4">
+			<h2 class="text-centre"><small>Step 3: Take a break, re-evaluate, and start again</small></h2>
 			<img src="https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcQYTvvTZRVw_-Ilgs3JAXFw5s-koFM00maKCw1vzrlDPA_nChfBEg" class="img-responsive" alt="Responsive image" id="animal">
-		<!--Column right--></div>
-    </div>
+		</div>
+			
 	</div>
+		
+		
+	</div>
+		
+	
 
     </div><!-- /.container -->
 	
